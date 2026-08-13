@@ -27,3 +27,5 @@ python3 main.py
 ## 개발 환경
 
 - Python 3
+
+JHJ
