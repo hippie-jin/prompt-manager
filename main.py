@@ -76,6 +76,32 @@ def list_prompts(prompts):
         star = "★" if prompt["favorite"] else " "
         print(f"{index}. [{star}] {prompt['title']} ({prompt['category']})")
 
+def view_by_category(prompts):
+    print("\n=== 카테고리별 조회 ===")
+
+    if len(prompts) == 0:
+        print("등록된 프롬프트가 없습니다.")
+        return
+
+    categories = sorted(set(prompt["category"] for prompt in prompts))
+
+    print("\n카테고리 목록:")
+    for index, category in enumerate(categories, start=1):
+        print(f"{index}. {category}")
+
+    choice = input("카테고리 선택: ")
+    while not choice.isdigit() or not (1 <= int(choice) <= len(categories)):
+        print("올바른 번호를 입력해주세요.")
+        choice = input("카테고리 선택: ")
+
+    selected_category = categories[int(choice) - 1]
+    filtered = [prompt for prompt in prompts if prompt["category"] == selected_category]
+
+    print(f"\n=== {selected_category} ({len(filtered)}개) ===")
+    for index, prompt in enumerate(filtered, start=1):
+        star = "★" if prompt["favorite"] else " "
+        print(f"{index}. [{star}] {prompt['title']}")
+
 def show_menu():
     print("\n=== 나만의 프롬프트 관리 ===")
     print("1. 프롬프트 추가")
@@ -97,7 +123,7 @@ def main():
         elif choice == "2":
             list_prompts(prompts)
         elif choice == "3":
-            print("(준비 중) 카테고리별 조회")
+            view_by_category(prompts)
         elif choice == "4":
             print("(준비 중) 프롬프트 검색")
         elif choice == "5":
