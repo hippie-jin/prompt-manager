@@ -128,6 +128,28 @@ def search_prompts(prompts):
         star = "★" if prompt["favorite"] else " "
         print(f"{index}. [{star}] {prompt['title']} ({prompt['category']})")
 
+def show_prompt_detail(prompts):
+    print("\n=== 프롬프트 상세 보기 ===")
+
+    if len(prompts) == 0:
+        print("등록된 프롬프트가 없습니다.")
+        return
+
+    for index, prompt in enumerate(prompts, start=1):
+        star = "★" if prompt["favorite"] else " "
+        print(f"{index}. [{star}] {prompt['title']} ({prompt['category']})")
+
+    choice = input("번호 선택: ")
+    while not choice.isdigit() or not (1 <= int(choice) <= len(prompts)):
+        print("올바른 번호를 입력해주세요.")
+        choice = input("번호 선택: ")
+
+    prompt = prompts[int(choice) - 1]
+    print(f"\n제목: {prompt['title']}")
+    print(f"카테고리: {prompt['category']}")
+    print(f"즐겨찾기: {'예' if prompt['favorite'] else '아니오'}")
+    print(f"내용:\n{prompt['content']}")
+
 def show_menu():
     print("\n=== 나만의 프롬프트 관리 ===")
     print("1. 프롬프트 추가")
@@ -153,7 +175,7 @@ def main():
         elif choice == "4":
             search_prompts(prompts)
         elif choice == "5":
-            print("(준비 중) 프롬프트 상세 보기")
+            show_prompt_detail(prompts)
         elif choice == "6":
             print("(준비 중) 즐겨찾기 관리")
         elif choice == "7":
