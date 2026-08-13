@@ -171,6 +171,18 @@ def manage_favorites(prompts):
     status = "즐겨찾기에 추가되었습니다." if prompt["favorite"] else "즐겨찾기에서 해제되었습니다."
     print(f"\n'{prompt['title']}' {status}")
 
+def show_favorites(prompts):
+    print("\n=== 즐겨찾기 목록 ===")
+
+    favorites = [prompt for prompt in prompts if prompt["favorite"]]
+
+    if len(favorites) == 0:
+        print("즐겨찾기한 프롬프트가 없습니다.")
+        return
+
+    for index, prompt in enumerate(favorites, start=1):
+        print(f"{index}. {prompt['title']} ({prompt['category']})")
+
 def show_menu():
     print("\n=== 나만의 프롬프트 관리 ===")
     print("1. 프롬프트 추가")
@@ -200,7 +212,7 @@ def main():
         elif choice == "6":
             manage_favorites(prompts)
         elif choice == "7":
-            print("(준비 중) 즐겨찾기 목록")
+            show_favorites(prompts)
         elif choice == "0":
             print("프로그램을 종료합니다.")
             break
