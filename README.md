@@ -5,7 +5,9 @@
 ## 주요 기능
 
 <img width="1020" height="215" alt="스크린샷 2026-08-13 오후 8 54 12" src="https://github.com/user-attachments/assets/b78d34ec-380f-4724-b2f3-ade12e983497" />. 
+
 1. **프롬프트 추가** — 제목, 내용, 카테고리를 입력해 새 프롬프트를 등록합니다.
+
 <img width="435" height="233" alt="스크린샷 2026-08-13 오후 8 54 48" src="https://github.com/user-attachments/assets/b4e982a2-f424-4374-a45d-50c31ac515cb" />. 
 <img width="399" height="249" alt="스크린샷 2026-08-13 오후 8 55 24" src="https://github.com/user-attachments/assets/2f50be70-2291-44a1-b2fa-57b4a497ef66" />. 
 3. **프롬프트 목록** — 등록된 전체 프롬프트를 즐겨찾기 표시와 함께 확인합니다.
