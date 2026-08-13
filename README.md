@@ -28,4 +28,27 @@ python3 main.py
 
 - Python 3
 
+```bash
+$ python3 -V
+Python 3.14.6
+
+$ git --version
+git version 2.55.0
+```
+
+## 저장소 정보
+
+- GitHub 저장소: https://github.com/hippie-jin/prompt-manager
+
+```bash
+$ git clone https://github.com/hippie-jin/prompt-manager.git
+Cloning into 'prompt-manager'...
+remote: Enumerating objects: 43, done.
+remote: Counting objects: 100% (43/43), done.
+remote: Compressing objects: 100% (26/26), done.
+remote: Total 43 (delta 23), reused 30 (delta 13), pack-reused 0 (from 0)
+Receiving objects: 100% (43/43), done.
+Resolving deltas: 100% (23/23), done.
+```
+
 JHJ
