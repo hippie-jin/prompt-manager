@@ -89,7 +89,6 @@ def show_menu():
 
 def main():
     prompts = create_default_prompts()
-    print(f"[확인용] 기본 프롬프트 {len(prompts)}개 불러옴")  # 나중에 목록 기능 만들면 지울 임시 코드
     while True:
         show_menu()
         choice = input("선택: ")
